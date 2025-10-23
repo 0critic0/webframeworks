@@ -20,7 +20,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', authRouter);
-app.use('/login', authRouter);
 app.use('/library', libraryRouter);
 
 // catch 404 and forward to error handler

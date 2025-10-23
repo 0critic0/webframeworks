@@ -3,7 +3,7 @@
 body {
   font-family: "Cabin", Arial, sans-serif;
   color: #ffffff;
-  background-color: #108a93;
+  background-color: #3A445D;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,12 +11,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: #928779;
+  border-color: #7B7062;
 }
 
 .navbar-brand {
   font-family: 'Lobster', cursive;
+}
+
+a {
+color:#3A445D;
 }
 
 .banner {
@@ -31,7 +35,10 @@ h1 small {
 }
 
 .card {
-  background-color: #469ea8;
+  background-color: #FF99C9;
+  border-radius:30px;
+  padding:20px;
+  margin:10px;
 }
 
 .card-primary {
@@ -53,8 +60,8 @@ h1 small {
 }
 
 .badge-default, .btn-primary {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: #ED217C;
+  border-color: #fff;
 }
 
 h4 a, h4 a:hover {

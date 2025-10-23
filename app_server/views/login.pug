@@ -3,3 +3,14 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+    form
+      .form-group.row
+      label.col-sm-2.col-form-label(for='inputEmail') Email
+      .col-sm-10
+        input#inputPassword.form-control(type='email' placeholder='Email')
+
+      .form-group.row
+      label.col-sm-2.col-form-label(for='inputPassword') Password
+      .col-sm-10
+        input#inputPassword.form-control(type='password' placeholder='Password')

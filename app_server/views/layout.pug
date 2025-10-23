@@ -9,7 +9,23 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css') 
 
   body 
-    block content 
-    script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js') 
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js') 
-    script(src='/javascripts/bootstrap.min.js') 
+    nav.navbar.fixed-top
+      .container
+      h4.navbar-brand.mb-0 Currently 
+      a.navbar-brand(href='/') Register
+      a.navbar-brand(href='/login') Log-in
+      
+
+    
+  .container  
+    block content
+      footer 
+        .row 
+          .col-12 
+            small &copy; Wiktoria Depta 2025
+
+
+
+script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js') 
+script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js') 
+script(src='/javascripts/bootstrap.min.js') 

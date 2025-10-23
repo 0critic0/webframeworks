@@ -3,7 +3,7 @@
 const express = require('express'); 
 const router = express.Router(); 
 
-const ctrlAuth = require('../controllers/auth');  
+const ctrlAuth = require('../controllers/users');  
 
 /* GET register page. */ 
 router.get('/', ctrlAuth.registerF);  

@@ -3,3 +3,28 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+    form
+      .form-group.row
+      label.col-sm-2.col-form-label(for='inputName') Forename
+      .col-sm-10
+        input#inputForename.form-control(type='name' placeholder='Forename')
+
+      .form-group.row
+      label.col-sm-2.col-form-label(for='inputPhone') Phone number
+      .col-sm-10
+        input#inputPhone.form-control(type='phone' placeholder='Phone number')
+
+      .form-group.row
+      label.col-sm-2.col-form-label(for='inputEmail') Email
+      .col-sm-10
+        input#inputEmail.form-control(type='email' placeholder='Email')
+
+      .form-group.row
+      label.col-sm-2.col-form-label(for='inputPassword') Password
+      .col-sm-10
+        input#inputPassword.form-control(type='password' placeholder='Password')
+      .col-sm-10
+
+      .form-group.row
+      button.btn.btn-primary(type='submit') Register
