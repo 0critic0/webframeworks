@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p #{message} #[a(href="/") here]
 
     form
       .form-group.row
@@ -16,4 +16,4 @@ block content
         input#inputPassword.form-control(type='password' placeholder='Password')
 
       .form-group.row
-      button.btn.btn-primary(type='submit') Login
+      button.btn.btn-primary(type='submit') #[a(href="/library") #{title}]

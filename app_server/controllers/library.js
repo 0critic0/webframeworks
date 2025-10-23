@@ -24,7 +24,7 @@ status: 'Completed'
 {  
 name: 'Forgotten Heir ', 
 author: 'Sebastian Blackwood', 
-rating: 3.5, 
+rating: 4.5, 
 genres: ['Historical', 'Fame', 'Mystery'], 
 status: 'Reading' 
 }]
