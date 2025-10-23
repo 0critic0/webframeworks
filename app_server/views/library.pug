@@ -1,68 +1,41 @@
 extends layout
-
 block content
+
+  mixin outputRating(rating)
+    - for (let i = 1; i <= 5; i++)
+      if i <= rating
+        i.fa.fa-star
+      else if (i - 0.5) <= rating
+        i.fa.fa-star-half-o
+      else
+        i.fa.fa-star-o 
+
   .row.banner 
     .col-12    
-        h1 Welcome to #{title}
-          small &nbsp;
-        p Judge a book by its cover!  
-
+        h1=pageHeader.title
+          small &nbsp;#{pageHeader.strapline}  
 
   .row 
     .col-12.col-md-8 
+
+    each book in library
       .card 
         .card-block 
-          h4 Love Game 
+          h4=book.name 
             small &nbsp; 
-            span.badge.badge-pill.badge-default.float-right Completed 
+               
 
-          i.fa.fa-star 
-            i.fa.fa-star 
-              i.fa.fa-star 
-                i.fa.fa-star-o 
-                  i.fa.fa-star-o
-          p.Author Emma Rae
+            span.badge.badge-pill.badge-default.float-right= book.status 
           
-          .categories 
-            span.badge.badge-warning Fiction  
-            span.badge.badge-warning Romance 
-            span.badge.badge-warning Sport 
+          +outputRating(book.rating)
 
-      .card 
-        .card-block 
-          h4 Silent Evidence 
-            small &nbsp; 
-            span.badge.badge-pill.badge-default.float-right Completed 
-
-          i.fa.fa-star 
-            i.fa.fa-star 
-              i.fa.fa-star 
-                i.fa.fa-star 
-                  i.fa.fa-star-o
-          p.Author Dr. Michael Chen
+          p.author= book.author
           
-          .categories 
-            span.badge.badge-warning Mystery  
-            span.badge.badge-warning Crime
-            span.badge.badge-warning Adventure
+          .genres 
+            each genre in book.genres
+              span.badge.badge-warning= genre  
+             
 
-      .card 
-        .card-block 
-          h4 Forgotten Heir 
-            small &nbsp; 
-            span.badge.badge-pill.badge-default.float-right Reading 
-
-          i.fa.fa-star 
-            i.fa.fa-star 
-              i.fa.fa-star
-                i.fa.fa-star-o
-                  i.fa.fa-star-o
-          p.Author Sebastian Blackwood
-          
-          .categories 
-            span.badge.badge-warning Historical 
-            span.badge.badge-warning Fiction
-            span.badge.badge-warning Mystery
     .col-12.col-md-4 
 
-      p.lead Looking for a place to store your reading journey. use our website
+      p.lead Looking for a place to store your reading journey? Use our website!
