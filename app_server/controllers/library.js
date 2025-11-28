@@ -33,6 +33,26 @@ _renderLibrary(req, res, body);
   }); 
 };
 
+const bookDetail = function(req, res){  
+  const path = `/api/library/${req.params.bookid}`;  
+  const requestOptions = {  
+    url: apiOptions.server + path,  
+    method: 'GET',  
+    json: {} 
+  };  
+  request(requestOptions, (err, response, body) => {  
+    _renderBookDetail(req, res, body); 
+  }); 
+};
+
+const _renderBookDetail = function(req, res, bookData){  
+  res.render('book-detail', { 
+    title: bookData.name,
+    book: bookData
+  });  
+};
+
 module.exports = {  
-  libraryF
+  libraryF,
+bookDetail 
 };
