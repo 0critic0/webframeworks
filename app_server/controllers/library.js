@@ -1,38 +1,38 @@
 /* Controller for library */ 
-
 const request = require('request'); 
 
+const apiOptions = {  
+  server: 'http://localhost:3000'  
+};  
+
+if (process.env.NODE_ENV === 'production') {  
+  apiOptions.server = 'https://express-wd-lab4.onrender.com';
+}
+
+const _renderLibrary = function(req, res, responseBody){  
+  res.render('library', { 
+    title: 'Currently - find a place to store all your reads!', 
+    pageHeader: {  
+      title: 'Currently',  
+      strapline: 'Find a place to store all your reads!'  
+    },
+    library: responseBody  // Use API data instead of hardcoded
+  });  
+};
+
 const libraryF = function(req, res){  
-res.render('library', { 
-	title: 'Currently - find a place to store all your reads!', 
-	pageHeader: {  
-	title: 'Currently',  
-	strapline: 'Find a place to store all your reads!'  
-	},
-library: [{  
-name: 'Love Game', 
-author: 'Emma Rae', 
-rating: 3, 
-genres: ['Fiction', 'Romance', 'Sport'], 
-status: 'Completed' 
-},
-{  
-name: 'Silent Evidence', 
-author: 'Dr. Michael Chen', 
-rating: 4, 
-genres: ['Mystery', 'Crime', 'Adventure'], 
-status: 'Completed' 
-},
-{  
-name: 'Forgotten Heir ', 
-author: 'Sebastian Blackwood', 
-rating: 4.5, 
-genres: ['Historical', 'Fame', 'Mystery'], 
-status: 'Reading' 
-}]
-});  
-}; 
+  const path = '/api/library';  
+  const requestOptions = {  
+    url: apiOptions.server + path,  
+    method: 'GET',  
+    json: {},  
+    qs: {} 
+  };  
+  request(requestOptions, (err, response, body) => {  
+_renderLibrary(req, res, body); 
+  }); 
+};
 
 module.exports = {  
-libraryF
-}; 
+  libraryF
+};
