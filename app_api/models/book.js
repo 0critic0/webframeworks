@@ -15,7 +15,16 @@ const bookSchema = new mongoose.Schema({
     max: 5
   },
   genres: [String],
-  status: String
+  status: String,
+
+  totalPages: {              
+    type: Number,
+    'default': 0
+  },
+  pagesRead: {           
+    type: Number,
+    'default': 0
+  }
 }); 
 
 mongoose.model('Book', bookSchema);
