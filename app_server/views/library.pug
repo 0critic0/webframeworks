@@ -16,26 +16,15 @@ block content
           small &nbsp;#{pageHeader.strapline}  
 
   .row 
-    .col-12.col-md-8 
-
-    each book in library
-      .card 
-        .card-block 
-          h4=book.name 
-            small &nbsp; 
-               
-
-            span.badge.badge-pill.badge-default.float-right= book.status 
-          
-          +outputRating(book.rating)
-
-          p.author= book.author
-          
-          .genres 
-            each genre in book.genres
-              span.badge.badge-warning= genre  
+    .col-12.col-md-8
+      .error= message
+      app-book-list Loading  
              
 
     .col-12.col-md-4 
 
       p.lead Looking for a place to store your reading journey? Use our website!
+
+block scripts
+  script(src='/build/polyfills-5CFQRCPP.js')
+  script(src='/build/main-ROJXT33S.js')
